@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon-Game</title>
     <style>
+
+
         body{
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: D1F8EF;
+
+}
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:bold;
+    text-shadow:1px 1px 4px rgb(120, 120, 120) ;
+    letter-spacing:0.05rem;
+
+
+}
+
+h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:1.2rem;
+    border: 2px solid black;
+    background-color: rgb(233, 225, 225);
+    
+   box-shadow:2px 2px 5px rgb(138, 137, 137);
 
 }
 #container{
@@ -20,25 +41,26 @@
 
 .box{
     
-    width:200px;
-    height:200px;
-    border:10px solid black;
-    margin:20px 10px;
+    width:100px;
+    height:100px;
+    border:5px solid rgb(0, 0, 0);
+    margin:10px 5px;
     border-radius: 20px;
+    box-shadow:1px 1px 6px grey;
     
 }
 .red{
-    background-color:#ffadad ;
+    background-color:#e96d6d ;
 
 }
 .yellow{
-background-color: #fdffb6;
+background-color: #fbff7e;
 }
 .green{
-background-color:#caffbf ;
+background-color:#8af375 ;
 }
 .blue{
-background-color:#bdb2ff ;
+background-color:#8476d3 ;
 }
 .flash{
     background-color:white;
@@ -49,7 +71,7 @@ background-color:#bdb2ff ;
 </head>
 <body>
     <h1>Simon-Game</h1>
-    <h2>Press the any key to start the Game</h2>
+    <h2 type="button">Start Game</h2>
     <div id="container">
         <div class="first">
             <div class="box red" type="botton" id="red"></div>
@@ -68,7 +90,7 @@ let level=0;
 let h2=document.querySelector("h2");
 let arr=["yellow","green","red","blue"];
 
-document.addEventListener("keypress",function(){
+h2.addEventListener("click",function(){
     if(started==false){
         console.log("game is started");
         started=true;
@@ -111,7 +133,7 @@ function checkSeq(idx){
         }
 
     }else{
-        h2.innerHTML=`Game is Over!!<br>Sorry!<br><span style="font-size:50px">&#128532;</span><br><b style="font-weight:200px">Your Score:${level}</b><br>Press Any key to Play Again`
+        h2.innerHTML=`Game is Over!!<br>Sorry!<br><span style="font-size:50px">&#128532;</span><br><p style="color:green">Your Score:${level}</p><br>Start Again`
         reset();
     }
 }
